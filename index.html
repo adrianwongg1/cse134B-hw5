@@ -4,66 +4,74 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio Website">
     <meta name="keywords" content="portfolio, HTML, CSS, JavaScript">
     <meta name="author" content="Adrian Wong">
 
     <title>Adrian's Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        h1 {
-            text-align: center;
-        }
-    </style>
 
 </head>
 
 
 <body>
     <header> 
-        <hgroup>
-            <h1>Adrian Wong's Personal Portfolio Website</h1>
-        </hgroup>
-        
+        <h1>Adrian Wong's Personal Portfolio Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact-me">Contact Me</a></li>
-            <li><a href="index2.html">Experiments Tags</a></li>
-        </ul>
-    </nav>
-
-    <hello-world>Hello</hello-world>
+    
 
     <main>
         <section id="about-me">
-            <h2>About Me</h2>
-            <img src="adrian-profile-pic.jpg" alt="Profile Picture" width="200" height="300">
-           
-            
-            <p>My name is Adrian Wong. I am a Fourth Year Mathematics-Computer Science major.
-                I am aspiring to be a Full Stack Software Engineer.
-            </p>
+            <section>
+            <h2>Mathematics-Computer Science B.S</h2>
+            <img src="media/adrian-profile-pic.jpg" alt="Profile Picture" width="200" height="300">
+            </section>
 
-            <br>
-            <h3>Resume</h3>
-                <iframe class="pdf" src="Adrian-Resume-2024.docx-(1).pdf" width="800" height="500"></iframe>
-            <br>
-            <br>
-            
+            <section>
+            <h2>About Me</h2>
+            <p>Hello! My name is Adrian Wong. I am a Fourth Year Mathematics-Computer Science major.
+                I am aspiring to be a Full Stack Software Engineer. I am passionate about developing Software
+                applications that can help people in their daily lives. I am currently looking for a Software Engineering
+                entry-level position. I am proficient in Java, Python, HTML, CSS, and JavaScript. I have experience in developing
+                full-stack applications using JavaFX and MongoDB. My academic journey at ucsd
+                has been an amazing experience. I have learned from world class professors with the opportunity to 
+                work on projects that have helped me grow as a Software Engineer. I am excited to see what the future holds for me.
+            </p>
+            </section>
+
+            <section>
+            <h2>Bio</h2>
+            <ul>
+                <li>Age: 21</li>
+                <li>Location: San Diego, California</li>
+                <li>Education: University of California, San Diego</li>
+                <li>Interested Positions: Software Engineer, Web Developer, Backend Developer</li>
+            </ul>
+            </section>
+
+        </section>
+
+        <section id="resume">
+        <h3>Resume</h3>
+                <embed src="media/Adrian-Resume-2024.docx-(1).pdf" alt="Adrian's Resume" id="resume"></embed>
         </section>
     
         <section id="portfolio">
             <h2>Portfolio</h2>
 
-            <hr>
-
             <h3>Project 1 PantryPal</h3>
-            <ol>
+            <img src="media/PantryPal-landing-page.png" alt="PantryPal Landing Page" id="pantry-pal-landing-page"> 
+
+            <ul>
                 <li><b><i>Developed</i></b> a full-stack <span class="technology">JavaFX</span> GUI application with a <span class="technology">MongoDB</span> backend, integrated with ChatGPT and Whisper
                     APIs to generate food recipes from transcribed audio input, enabling hands-free meal planning</li>
                 <li><b><i>Wrote</i></b> 100+ unit and integration tests, resulting in catching and fixing of 40+ bugs prior to production, significantly
@@ -72,19 +80,11 @@
                     leading to more relevant and visually accurate results</li>
                 <li><b><i>Led</i></b> Agile Development team of 5 by managing daily stand-ups, conflict resolution, and task tracking using GitHub
                     Actions and Projects to meet project milestone deadlines successfully</li>
-            </ol>
+                </ul>
             <a href="https://github.com/adrianwongg1/Pantry_Pal">PantryPal GitHub</a>
-            
-            <hr>
-            
-            <h3>Project 2 Personal Portfolio Website</h3>
-            <a href="https://github.com/adrianwongg1/cse134BHW2">Personal Website GitHub</a>
-            
 
-            <hr>
-
-            <h3>Project 3 (Data Analysis Project)</h3>
-            
+            <h3>Project 2 (Data Analysis Project)</h3>
+            <img src="media/Data-Analysis-Graphs.png" alt="Data Analysis Graphs" id="data-analysis-graphs"> 
             <ul>
                 <li><strong><em>Performed</em></strong> comprehensive exploratory data analysis (EDA) on 100,000+ rows of Super Bowl Halftime Show data,
                     revealing minimal correlation between the popularity of performers and advertiser stock prices</li>
@@ -99,14 +99,9 @@
             <a href="https://github.com/adrianwongg1/Data-Analysis-Project">Data Analysis Project GitHub</a>
         </section>
 
-        <p>This is a canvas.</p>
-
-        <canvas width="100" height="100">
-            This is a rectangle.
-        </canvas>
-        
-        <div id="contact-me">
-            <h2>Contact Me</h2>
+        <section id="contact-me">
+            <section>
+            <h2>Let's Get In Touch!</h2>
         
             <form>
                 <label for="fname">First name:</label>
@@ -118,12 +113,26 @@
                 <label for="email">Email Address:</label>
                 <input type="text" id="email" name="email"><br><br>
         
-                <label for="comments">Comments:</label><br>
-                <textarea id="comments" name="comments"></textarea><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
         
                 <input type="submit" value="Submit">
             </form>
-        </div>
+            </section>
+
+            <section id="contact-info">
+                <h2>Contact:</h2>
+                <ul>
+                  <li>Personal Email: <a href="mailto:adrianwong055@gmail.com">adrianwong055@gmail.com</a></li>
+                  <li>School Email: <a href="mailto:adw004@ucsd.edu">adw004@ucsd.edu</a></li>
+                  <li>Phone Number: <a href="tel:562-441-8485">(562)-441-8485</a></li>
+                  <li>LinkedIn: <a href="https://www.linkedin.com/in/adrian-wong1/">linkedin.com/in/adrian-wong1/</a></li>
+                </ul>
+              </section>
+            </section>
+
+        </section>
+
         
 
     </main>
