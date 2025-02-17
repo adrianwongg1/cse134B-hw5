@@ -9,6 +9,10 @@
     <meta name="keywords" content="portfolio, HTML, CSS, JavaScript">
     <meta name="author" content="Adrian Wong">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
     <title>Adrian's Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
 
@@ -17,9 +21,9 @@
 
 <body>
     <header> 
-        <h1>Adrian Wong's Personal Portfolio Website</h1>
+        <h1>Adrian Wong's Personal Portfolio</h1>
         <nav>
-            <ul>
+            <ul class="main_menu">
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact-me">Contact Me</a></li>
@@ -33,12 +37,12 @@
         <section id="about-me">
             <section>
             <h2>Mathematics-Computer Science B.S</h2>
-            <img src="media/adrian-profile-pic.jpg" alt="Profile Picture" width="200" height="300">
+            <img src="media/adrian-profile-pic.jpg" alt="Profile Picture" width="70%" height="70%">
             </section>
 
             <section>
             <h2>About Me</h2>
-            <p>Hello! My name is Adrian Wong. I am a Fourth Year Mathematics-Computer Science major.
+            <p>Hello! My name is Adrian Wong. I am a Fourth Year Mathematics-Computer Science major at <span style="color: blue;">University of California, San Diego (UCSD)</span>.
                 I am aspiring to be a Full Stack Software Engineer. I am passionate about developing Software
                 applications that can help people in their daily lives. I am currently looking for a Software Engineering
                 entry-level position. I am proficient in Java, Python, HTML, CSS, and JavaScript. I have experience in developing
@@ -53,7 +57,7 @@
             <ul>
                 <li>Age: 21</li>
                 <li>Location: San Diego, California</li>
-                <li>Education: University of California, San Diego</li>
+                <li>Education: University of California, San Diego (UCSD)</li>
                 <li>Interested Positions: Software Engineer, Web Developer, Backend Developer</li>
             </ul>
             </section>
@@ -61,43 +65,64 @@
         </section>
 
         <section id="resume">
-        <h3>Resume</h3>
-                <embed src="media/Adrian-Resume-2024.docx-(1).pdf" alt="Adrian's Resume" id="resume"></embed>
+        <h2>Resume</h2>
+        <br>
+            <embed src="media/Adrian-Resume-2024.docx-(1).pdf" alt="Adrian's Resume" id="resume"></embed>
         </section>
     
         <section id="portfolio">
+            <section>
             <h2>Portfolio</h2>
-
-            <h3>Project 1 PantryPal</h3>
-            <img src="media/PantryPal-landing-page.png" alt="PantryPal Landing Page" id="pantry-pal-landing-page"> 
-
-            <ul>
-                <li><b><i>Developed</i></b> a full-stack <span class="technology">JavaFX</span> GUI application with a <span class="technology">MongoDB</span> backend, integrated with ChatGPT and Whisper
-                    APIs to generate food recipes from transcribed audio input, enabling hands-free meal planning</li>
-                <li><b><i>Wrote</i></b> 100+ unit and integration tests, resulting in catching and fixing of 40+ bugs prior to production, significantly
-                    improving application stability and performance</li>
-                <li><b><i>Enhanced</i></b> DALL-E food image generation accuracy by 85% by incorporating KeyBERT for keyword extraction,
-                    leading to more relevant and visually accurate results</li>
-                <li><b><i>Led</i></b> Agile Development team of 5 by managing daily stand-ups, conflict resolution, and task tracking using GitHub
-                    Actions and Projects to meet project milestone deadlines successfully</li>
-                </ul>
-            <a href="https://github.com/adrianwongg1/Pantry_Pal">PantryPal GitHub</a>
-
-            <h3>Project 2 (Data Analysis Project)</h3>
-            <img src="media/Data-Analysis-Graphs.png" alt="Data Analysis Graphs" id="data-analysis-graphs"> 
-            <ul>
-                <li><strong><em>Performed</em></strong> comprehensive exploratory data analysis (EDA) on 100,000+ rows of Super Bowl Halftime Show data,
-                    revealing minimal correlation between the popularity of performers and advertiser stock prices</li>
-                <li><strong><em>Developed</em></strong> linear regression models with <span class="technology">Python</span> to analyze correlations between artist popularity, ad exposure, and
-                    financial performance of advertising companies before and after the show, achieving 90% accuracy in stock price
-                    predictions</li>
-                <li><strong><em>Utilized</em></strong> Python libraries like <span class="technology">Pandas, NumPy, Seaborn, and Matplotlib</span> to isolate key variables and provide statistical
-                    visualization against show popularity, improving data accuracy and analysis efficiency by 80%</li>
-                <li><strong><em>Led</em></strong> collaboration for a team of 5 using an agile workflow, distributing tasks such as data gathering, hypothesis
-                    formulation, analysis, and revisions to ensure timely delivery</li>
-            </ul>
-            <a href="https://github.com/adrianwongg1/Data-Analysis-Project">Data Analysis Project GitHub</a>
         </section>
+
+        <section id="portfolio-content">
+            <section>
+                <h3>Project 1 PantryPal</h3>
+                <img src="media/PantryPal-landing-page.png" alt="PantryPal Landing Page" id="pantry-pal-landing-page"> 
+                <div class="portfolio-link">
+                    <a href="https://github.com/adrianwongg1/Pantry_Pal">PantryPal GitHub</a>
+                </div>
+            </section>
+
+            <section>
+                <ul>
+                    <li><b><i>Developed</i></b> a full-stack <span class="technology">JavaFX</span> GUI application with a <span class="technology">MongoDB</span> backend, integrated with ChatGPT and Whisper
+                        APIs to generate food recipes from transcribed audio input, enabling hands-free meal planning</li>
+                    <li><b><i>Wrote</i></b> 100+ unit and integration tests, resulting in catching and fixing of 40+ bugs prior to production, significantly
+                        improving application stability and performance</li>
+                    <li><b><i>Enhanced</i></b> DALL-E food image generation accuracy by 85% by incorporating KeyBERT for keyword extraction,
+                        leading to more relevant and visually accurate results</li>
+                    <li><b><i>Led</i></b> Agile Development team of 5 by managing daily stand-ups, conflict resolution, and task tracking using GitHub
+                        Actions and Projects to meet project milestone deadlines successfully</li>
+                </ul>
+                
+            </section>
+            
+
+            <section>
+                <h3>Project 2 (Data Analysis Project)</h3>
+                <img src="media/Data-Analysis-Graphs.png" alt="Data Analysis Graphs" id="data-analysis-graphs"> 
+                <div class="portfolio-link">
+                    <a href="https://github.com/adrianwongg1/Data-Analysis-Project">Data Analysis Project GitHub</a>
+                </div>
+            </section>
+            
+            <section>
+                <ul>
+                    <li><strong><em>Performed</em></strong> comprehensive exploratory data analysis (EDA) on 100,000+ rows of Super Bowl Halftime Show data,
+                        revealing minimal correlation between the popularity of performers and advertiser stock prices</li>
+                    <li><strong><em>Developed</em></strong> linear regression models with <span class="technology">Python</span> to analyze correlations between artist popularity, ad exposure, and
+                        financial performance of advertising companies before and after the show, achieving 90% accuracy in stock price
+                        predictions</li>
+                    <li><strong><em>Utilized</em></strong> Python libraries like <span class="technology">Pandas, NumPy, Seaborn, and Matplotlib</span> to isolate key variables and provide statistical
+                        visualization against show popularity, improving data accuracy and analysis efficiency by 80%</li>
+                    <li><strong><em>Led</em></strong> collaboration for a team of 5 using an agile workflow, distributing tasks such as data gathering, hypothesis
+                        formulation, analysis, and revisions to ensure timely delivery</li>
+                </ul>
+            </section>
+
+        </section>
+        
 
         <section id="contact-me">
             <section>
