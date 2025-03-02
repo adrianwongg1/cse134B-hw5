@@ -1,19 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio Website">
     <meta name="keywords" content="portfolio, HTML, CSS, JavaScript">
     <meta name="author" content="Adrian Wong">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
     <title>Adrian's Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-    <header>
+    <header> 
         <h1>Adrian Wong's Personal Portfolio</h1>
         <nav>
             <ul class="main_menu">
@@ -22,15 +29,10 @@
                 <li><a href="#contact-me">Contact Me</a></li>
             </ul>
         </nav>
-        <button id="theme-toggle" aria-label="Toggle theme">
-            <span id="theme-icon">🌙</span> <!-- Default to dark mode icon -->
-        </button>
     </header>
 
-    <noscript>
-        <p>This website uses JavaScript for theme switching. Please enable JavaScript for full functionality.</p>
-    </noscript>
     
+
     <main>
         <section id="about-me">
             <section>
@@ -126,22 +128,20 @@
             <section>
             <h2>Let's Get In Touch!</h2>
         
-            <form action="https://httpbin.org/post" method="POST">
+            <form>
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Name" maxlength="256" required>
-                <span class="error" aria-live="polite"></span><br><br>
-            
+                <input type="text" id="name" name="name" placeholder="Name" pattern="^[a-zA-Z ]*$" maxlength="256" required><br><br>
+        
                 <label for="email">Email Address:</label>
-                <input type="text" id="email" name="email" placeholder="Email" minlength="3" maxlength="254" required>
-                <span class="error" aria-live="polite"></span><br><br>
-            
+                <input type="email" id="email" name="email" placeholder="Email" minlength="3" maxlength="254" required><br><br>
+        
                 <label for="message">Message:</label><br>
-                <textarea id="message" name="message" placeholder="Your Message..." required></textarea><br>
-                <span class="error" aria-live="polite"></span>
-                <div id="remainingChars">250 Characters Remaining</div><br>
-            
+                <textarea id="message" name="message" placeholder="Your Message..." maxlength="250" required></textarea><br><br>
+        
                 <input type="submit" value="Submit">
-            </form>            
+
+                <input type="hidden" name="possible_bot" value="true">
+            </form>
         
             </section>
 
@@ -159,6 +159,8 @@
 
         </section>
 
+        
+
     </main>
     
     <footer>
@@ -170,6 +172,17 @@
 
     <script src="script.js"></script>
 
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super();
+                console.log("Hello world!");
+            }
+        }
+
+        customElements.define("hello-world", HelloWorld);
+    </script>
+    
     <noscript>You should see this when JavaScript doesn't work!</noscript>
 </body>
 
