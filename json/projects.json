@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Vehicle Maintenance Management System",
+      "imageUrl": "media/Vehicle-Maintenance-landing-page.png",
+      "imageAlt": "Maintenance System Landing Page",
+      "description": "A full-stack vehicle maintenance tracking system.",
+      "details": [
+        "<b><i>Designed</i></b> a full-stack vehicle maintenance tracking system using React.js, HTML, Node.js, JavaScript, enabling CRUD operations for 100+ maintenance records across 20+ clients and deployed through AWS",
+        "<b><i>Created</i></b> model schemas from the NHTSA Vehicle API to auto-populate vehicle specifications, reducing manual data entry by 70%",
+        "<b><i>Developed</i></b> a responsive frontend with DOM manipulation and Bootstrap for UI components, improving user experience through cross-device compatibility"
+      ],
+      "linkUrl": "#",
+      "linkText": "Vehicle Maintenance Management System GitHub"
+    },
+    {
+      "title": "PantryPal",
+      "imageUrl": "media/PantryPal-landing-page.png",
+      "imageAlt": "PantryPal Landing Page",
+      "description": "Meal planning with ChatGPT and DALL-E integration.",
+      "details": [
+        "<b><i>Developed</i></b> a full-stack JavaFX GUI application with a MongoDB backend, integrated with ChatGPT and Whisper APIs to generate food recipes from transcribed audio input, enabling hands-free meal planning",
+        "<b><i>Wrote</i></b> 100+ unit and integration tests, resulting in catching and fixing of 40+ bugs prior to production, significantly improving application stability and performance",
+        "<b><i>Enhanced</i></b> DALL-E food image generation accuracy by 85% by incorporating KeyBERT for keyword extraction, leading to more relevant and visually accurate results",
+        "<b><i>Led</i></b> Agile Development team of 5 by managing daily stand-ups, conflict resolution, and task tracking using GitHub Actions and Projects to meet project milestone deadlines successfully"
+      ],
+      "linkUrl": "https://github.com/adrianwongg1/Pantry_Pal",
+      "linkText": "PantryPal GitHub"
+    },
+    {
+      "title": "Data Analysis Project",
+      "imageUrl": "media/Data-Analysis-Graphs.png",
+      "imageAlt": "Data Analysis Graphs",
+      "description": "Analyzed Super Bowl Halftime Show data.",
+      "details": [
+        "<strong><em>Performed</em></strong> comprehensive exploratory data analysis (EDA) on 100,000+ rows of Super Bowl Halftime Show data, evealing minimal correlation between the popularity of performers and advertiser stock prices",
+        "<strong><em>Developed</em></strong> linear regression models with Python to analyze correlations between artist popularity, ad exposure, and financial performance of advertising companies before and after the show, achieving 90% accuracy in stock price predictions",
+        "<strong><em>Utilized</em></strong> Python libraries like Pandas, NumPy, Seaborn, and Matplotlib to isolate key variables and provide statistical visualization against show popularity, improving data accuracy and analysis efficiency by 80%"
+      ],
+      "linkUrl": "https://github.com/adrianwongg1/Data-Analysis-Project",
+      "linkText": "Data Analysis GitHub"
+    }
+  ]

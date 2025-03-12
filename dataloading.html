@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>Adrian's Personal Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dataloading.css">
 </head>
 <body>
     <header>
@@ -20,8 +20,7 @@
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact-me">Contact Me</a></li>
-                <li><a href="customelement.html">Custom Element</a></li>
-                <li><a href="dataloading.html">Data Loading Page</a></li>
+                <li><a href="index.html">Regular Page</a></li>
             </ul>
         </nav>
         <button id="theme-toggle" aria-label="Toggle theme">
@@ -34,6 +33,13 @@
     </noscript>
     
     <main>
+        <section id="data-loading">
+            <h2>Load Data</h2>
+            <button id="load-local">Load Local</button>
+            <button id="load-remote">Load Remote</button>
+            <div id="data-container"></div>
+        </section>
+
         <section id="about-me">
             <section>
             <h2>Mathematics-Computer Science B.S</h2>
@@ -190,7 +196,7 @@
           </address>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/dataloading.js"></script>
 
     <noscript>You should see this when JavaScript doesn't work!</noscript>
 </body>

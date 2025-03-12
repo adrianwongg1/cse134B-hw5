@@ -1,0 +1,271 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define light and dark theme variables */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --header-background: rgb(26, 159, 66); /* Green */
+    --footer-background: color-mix(in oklab, #a71e14 0%, red); /* Red */
+    --section-background: rgb(26, 159, 66); /* Green */
+    --contact-background: color(a98-rgb 0 1 1); /* Black */
+    --white: #fff;
+    --lightblue: lightblue;
+    --blue: blue;
+    --yellowgreen: yellowgreen;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: white;
+    --header-background: #1a1a1a;
+    --footer-background: #333;
+    --section-background: #1a1a1a;
+    --contact-background: #333;
+}
+
+body {
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    background-color: gray;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, nav {
+    text-align: center;
+}
+
+h2 {
+    color: var(--white);
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+header {
+    background: var(--header-background);
+    color: var(--white);
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+p, li {
+    color: var(--white);
+}
+
+span {
+    animation-name: colorChange;
+    animation-duration: 5s;
+}
+
+@keyframes colorChange {
+    from {color: var(--blue);}
+    to {color: var(--yellowgreen);}
+}
+
+section {
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+section:has(h3) {
+    background-color: var(--lightblue);
+}
+
+#about-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: var(--section-background);
+}
+
+#about-me img {
+    width: 80%;
+    height: 80%;
+}
+
+#portfolio h2 {
+    text-align: center;
+}
+
+#portfolio {
+    background-color: var(--section-background);
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.portfolio-link {
+    text-align: center;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.portfolio-link:hover {
+    margin-right: 20px;
+    transform: scale(1.3);
+}
+
+#portfolio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+    background-color: var(--section-background);
+}
+
+#contact-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: var(--contact-background);
+    text-align: center;
+}
+
+#contact-me input:valid {
+    border: 2px solid black;
+}
+
+#contact-me input:invalid {
+    border: 2px dashed red;
+}
+
+#pantry-pal-landing-page {
+    width: 40dvw;
+    height: 40dvh;
+}
+
+#resume {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: var(--section-background);
+}
+
+#data-analysis-graphs {
+    width: 40vw;
+    height: 40vh;
+}
+
+input.no-js:user-invalid {
+    border: 2px dashed red;
+    background-color: rgb(255, 171, 171);
+}
+
+input.no-js:user-invalid + span::before {
+    content: "✖";
+    color: red;
+}
+
+footer {
+    background: var(--footer-background);
+    color: var(--white);
+    text-align: center;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#data-loading {
+    background-color: var(--section-background);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#data-loading button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.data-card {
+    background-color: var(--lightblue);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 200px;
+    text-align: center;
+}
+
+.data-card h3 {
+    color: var(--white);
+}
+
+.data-card p {
+    color: var(--white);
+}
+
+@media (max-width: 700px) {
+    nav {
+        margin: 0;
+    }
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
+    #about-me {
+        display: block;
+    }
+    ul.main_menu {
+        margin: 0;
+        margin-left: 5rem;
+        display: block;
+    }
+    ul.main_menu li {
+        width: 9.5%;
+    }
+    #portfolio-content {
+        display: block;
+    }
+    #contact-me {
+        display: block;
+    }
+    #resume {
+        width: 75%;
+        height: 75%;
+    }
+}
