@@ -1,3 +1,5 @@
+import { getProjectCardCSS } from './project-card-css.js';
+
 const form = document.querySelector('form');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -121,105 +123,65 @@ themeToggle.addEventListener('click', toggleTheme);
 
 class ProjectCard extends HTMLElement {
     constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-      const template = document.createElement('template');
-      template.innerHTML = `
-        <style>
-          .card {
-            background: var(--section-background);
-            padding: 1rem;
-            margin: 1rem;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          .card h2 {
-            color: var(--white);
-            text-align: center;
-          }
-          .card img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-          }
-          .card p {
-            color: var(--white);
-            text-align: center;
-          }
-          .card ul {
-            color: var(--white);
-            margin: 1rem 0;
-          }
-          .card a {
-            color: var(--lightblue);
-            text-decoration: none;
-            transition: color 0.3s ease;
-          }
-          .card a:hover {
-            color: var(--blue);
-          }
-        </style>
-        <div class="card">
-          <h2></h2>
-          <picture>
-            <img src="" alt="">
-          </picture>
-          <p class="description"></p>
-          <ul class="details"></ul>
-          <a href="" class="link"></a>
-        </div>
-      `;
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
+        super();
     }
-  
-    set project(value) {
-      this.projects = value;
-      this.updateContent();
+
+    connectedCallback() {
+        const style = document.createElement('style');
+        style.textContent = getProjectCardCSS();
+
+        const title = this.getAttribute('title') || '';
+        const imageUrl = this.getAttribute('image-url') || '';
+        const imageAlt = this.getAttribute('image-alt') || '';
+        const description = this.getAttribute('description') || '';
+        const details = JSON.parse(this.getAttribute('details') || '[]');
+        const linkUrl = this.getAttribute('link-url') || '';
+        const linkText = this.getAttribute('link-text') || '';
+
+        this.innerHTML = '';
+        this.appendChild(style);
+        this.innerHTML += `
+            <div class="card">
+                <h2>${title}</h2>
+                <picture>
+                    <img src="${imageUrl}" alt="${imageAlt}">
+                </picture>
+                <p class="description">${description}</p>
+                <ul class="details">
+                    ${details.map(detail => `<li>${detail}</li>`).join('')}
+                </ul>
+                <a href="${linkUrl}" class="link">${linkText}</a>
+            </div>
+        `;
     }
-  
-    updateContent() {
-      if (!this.projects) return;
-      
-      this.shadowRoot.querySelector('h2').textContent = this.projects.title;
+}
 
-      const img = this.shadowRoot.querySelector('img');
-      img.src = this.projects.imageUrl;
-      img.alt = this.projects.imageAlt || '';
+customElements.define('project-card', ProjectCard);
 
-      this.shadowRoot.querySelector('.description').textContent = this.projects.description;
-      const ul = this.shadowRoot.querySelector('.details');
-      ul.innerHTML = this.projects.details.map(detail => `<li>${detail}</li>`).join('');
-
-      const link = this.shadowRoot.querySelector('.link');
-      link.href = this.projects.linkUrl;
-      link.textContent = this.projects.linkText;
-    }
-  }
-  
-  customElements.define('project-card', ProjectCard);
-
-  async function loadProjects() {
+// Load projects dynamically
+async function loadProjects() {
     try {
-      const response = await fetch('json/projects.json');
-      const jsonProjects = await response.json();
+        const response = await fetch('json/projects.json');
+        const jsonProjects = await response.json();
+        const localProjects = JSON.parse(localStorage.getItem('projects')) || [];
+        const allProjects = [...jsonProjects, ...localProjects];
+        const portfolioContent = document.getElementById('portfolio-content');
+        portfolioContent.innerHTML = '';
 
-      const localProjects = JSON.parse(localStorage.getItem('projects')) || [];
-
-      const allProjects = [...jsonProjects, ...localProjects];
-      const portfolioContent = document.getElementById('portfolio-content');
-      portfolioContent.innerHTML = ''; 
-
-      allProjects.forEach(project => {
-        const card = document.createElement('project-card');
-        card.project = project;
-        portfolioContent.appendChild(card);
-      });
+        allProjects.forEach(project => {
+            const card = document.createElement('project-card');
+            card.setAttribute('title', project.title);
+            card.setAttribute('image-url', project.imageUrl);
+            card.setAttribute('image-alt', project.imageAlt || '');
+            card.setAttribute('description', project.description);
+            card.setAttribute('details', JSON.stringify(project.details));
+            card.setAttribute('link-url', project.linkUrl);
+            card.setAttribute('link-text', project.linkText);
+            portfolioContent.appendChild(card);
+        });
     } catch (error) {
-      console.error('Error loading projects:', error);
+        console.error('Error loading projects:', error);
     }
-  }
-  
-  document.addEventListener('DOMContentLoaded', loadProjects);
+}
+
+document.addEventListener('DOMContentLoaded', loadProjects);
