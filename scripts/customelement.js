@@ -60,7 +60,6 @@ function updateCharCount() {
     }
 }
 
-// Function to enforce character limit in the textarea
 function enforceCharLimit() {
     if (messageInput.value.length > maxChars) {
         messageInput.value = messageInput.value.substring(0, maxChars);
@@ -68,7 +67,6 @@ function enforceCharLimit() {
     }
 }
 
-// Event listeners for input fields
 nameInput.addEventListener('input', validateName);
 emailInput.addEventListener('input', validateEmail);
 messageInput.addEventListener('input', validateMessage);
@@ -78,7 +76,6 @@ messageInput.addEventListener('input', enforceCharLimit);
 form.addEventListener('submit', (event) => {
     formErrors = [];
 
-    // Validate each field
     if (!validateName()) {
         formErrors.push({ field: 'name', message: 'Invalid characters in name.' });
     }
@@ -158,7 +155,6 @@ class ProjectCard extends HTMLElement {
 
 customElements.define('project-card', ProjectCard);
 
-// Load projects dynamically
 async function loadProjects() {
     try {
         const response = await fetch('json/projects.json');

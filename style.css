@@ -1,17 +1,15 @@
-/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
 }
 
-/* Define light and dark theme variables */
 :root {
     --background-color: white;
     --text-color: black;
-    --header-background: rgb(26, 159, 66); /* Green */
-    --footer-background: color-mix(in oklab, #a71e14 0%, red); /* Red */
-    --section-background: rgb(26, 159, 66); /* Green */
-    --contact-background: color(a98-rgb 0 1 1); /* Black */
+    --header-background: rgb(26, 159, 66);
+    --footer-background: lightblue;
+    --section-background: rgb(26, 159, 66);
+    --contact-background: color(a98-rgb 0 1 1);
     --white: #fff;
     --lightblue: lightblue;
     --blue: blue;
@@ -77,6 +75,15 @@ p, li {
 span {
     animation-name: colorChange;
     animation-duration: 5s;
+}
+
+#name, #email {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
 }
 
 @keyframes colorChange {

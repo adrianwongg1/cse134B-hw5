@@ -58,7 +58,6 @@ function updateCharCount() {
     }
 }
 
-// Function to enforce character limit in the textarea
 function enforceCharLimit() {
     if (messageInput.value.length > maxChars) {
         messageInput.value = messageInput.value.substring(0, maxChars);
@@ -76,7 +75,6 @@ messageInput.addEventListener('input', enforceCharLimit);
 form.addEventListener('submit', (event) => {
     formErrors = [];
 
-    // Validate each field
     if (!validateName()) {
         formErrors.push({ field: 'name', message: 'Invalid characters in name.' });
     }
@@ -125,18 +123,17 @@ const dataContainer = document.getElementById('data-container');
 
 const localDataKey = 'portfolioData';
 
-const sampleData = [
+const localInformation = [
     { id: 1, title: "Project 1", description: "Vehicle Maintenance Management System" },
     { id: 2, title: "Project 2", description: "PantryPal" },
     { id: 3, title: "Project 3", description: "Data Analysis Project" },
     { id: 4, title: "This is localStorage information", description: "FETCH! LOCAL! STORAGE!" }
 ];
 
-// Save sample data to localStorage
-localStorage.setItem(localDataKey, JSON.stringify(sampleData));
+localStorage.setItem(localDataKey, JSON.stringify(localInformation));
 
 function displayData(data) {
-    dataContainer.innerHTML = ''; // Clear previous data
+    dataContainer.innerHTML = ''; 
     data.forEach(item => {
         const card = document.createElement('div');
         card.className = 'data-card';
@@ -153,6 +150,34 @@ loadLocalButton.addEventListener('click', () => {
     if (localData) {
         displayData(localData);
     } else {
-        alert('No data found in local storage.');
+        alert('No data found in local storage');
     }
 });
+
+
+const url = "https://api.jsonbin.io/v3/b/67d7a6fb8561e97a50ed742c";
+loadRemoteButton.addEventListener('click', async () => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const jsonData = await response.json();
+
+        dataContainer.innerHTML = '';
+
+        jsonData.record.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'data-card';
+            card.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+            `;
+            dataContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error(error.message);
+    }
+});
+
