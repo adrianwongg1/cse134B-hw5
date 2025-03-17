@@ -1,1 +1,3 @@
 # cse134BHW5
+
+I made changes to my CSS to fix my issues with the text boxes bleeding out of my container. I also made changes to the colors to the bottom of my HTML to make it more astheticly pleasing. I made updates to the JavaScript to make the loadLocal and loadRemote buttons work correctly, connecting the fetch APIs. I loaded basic information into the JSON objects, however I will be able to change the information in the JSON objects to load whatever information I need to do in the future. I made three HTML files to demonstrate all the requirements needed for HW5, and I will be able to refactor as I need to make this personal website as polished as possible. Thank you TA's for an amazing quarter!
